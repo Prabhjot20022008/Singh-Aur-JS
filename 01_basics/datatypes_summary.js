@@ -56,3 +56,32 @@ console.log(typeof bigNumber); // bigint
 console.log("NON-PRIMITIVE DATATYPES");
 console.log(typeof myFunction); // function (function-object)
 console.log(typeof myObj); // object
+
+//  ********************** STACK AND HEAP ***********************
+
+// Stack => Primitive 
+// Heap => Non-Primitive (reference)
+
+// ******* STACK *******
+let myYoutubename = "prabhjotsi2008";
+
+let anotherName = myYoutubename;
+anotherName = "ChaiAurCode";
+
+console.log(myYoutubename); // prabhjotsi2008
+console.log(anotherName); // ChaiAurCode
+// shows that a copy of myYoutubename goes to anothername , and not the reference of variable itself
+
+
+// ********** HEAP **********
+let userOne = {
+    email: "user@google.com",
+    upi: "user@okaxis",
+}
+
+let userTwo = userOne;
+userTwo.email = "prabh@google.com";
+
+console.log(userOne.email); // prabh@google.com
+console.log(userTwo.email); // prabh@google.com
+// shows that the reference of userOne goes to userTwo , and not a copy
