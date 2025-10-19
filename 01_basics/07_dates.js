@@ -32,3 +32,8 @@ let modifyDate = newDate.toLocaleString("default",{
 });
 
 console.log(modifyDate);
+
+let myBirthday = new Date(2008,1,20,20,45,0);
+console.log(myBirthday.toLocaleString());
+console.log(`Date : ${myBirthday.toLocaleDateString()}`);
+console.log(`Time : ${myBirthday.toLocaleTimeString()}`);
