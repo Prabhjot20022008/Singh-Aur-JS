@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212121;
+    color: white;
+    font-family:  sans-serif;
+    text-align: center;
+}
+
+h1{
+    background-color: purple;
+    padding: 5px;
+    color: white;
+}
+
+.canvas{
+    height: 40vh;
+    width: auto;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button{
+    border: 2px solid white;
+    height: 150px;
+    width: 150px;
+    border-radius: 1rem;
+}
+
+#grey{
+    background-color: grey;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#white{
+    background-color: white;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
