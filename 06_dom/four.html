@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiAurCode | DOM</title>
+</head>
+<body style="background-color: #212121; color: whitesmoke;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // it causes tree-traversing problem for large amt. of data
+    function addLang(langName){
+        const item = document.createElement("li");
+        item.innerHTML = `${langName}`;
+        const parent = document.querySelector(".language");
+        parent.appendChild(item);
+    }
+    addLang("Python");
+    addLang("CPP");
+    addLang("TypeScript");
+
+    // A MUCH OPTIMISED WAY
+    function addOptiLang(langName){
+        const item = document.createElement("li");
+        item.appendChild(document.createTextNode(langName));
+        const parent = document.querySelector(".language");
+        parent.appendChild(item);
+    }
+    addOptiLang("Ruby");
+    addOptiLang("GoLang");
+
+
+    // EDITING VALUES
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // console.log(secondLang);
+    const newli = document.createElement("li");
+    newli.textContent = "CSS";
+
+    secondLang.replaceWith(newli); // replaces an element with another
+
+    // edit // another way
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>HTML</li>";
+
+
+    // REMOVE LANGUAGE
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove(); // REMOVED
+</script>
+</html>
