@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212121;
+    color: whitesmoke;
+    font-family: 'Trebuchet MS';
+}
+
+header{
+
+    text-align: center;
+}
+
+header>h1{
+    padding: 0.5rem;
+    background-color: cornflowerblue;
+    /* width: 100%; */
+}
+
+
+main{
+    height: 80vh;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont{
+    height: 500px;
+    width: 400px;
+    border: 4px solid whitesmoke;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    font-size: 1.25rem;
+    background-color: rgb(25, 24, 24);
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.cont>p{
+    height: 12%;
+    width: 100%;
+    border: 3px solid rgb(59, 123, 242);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f3b3b;
+}
+
+.cont>input{
+    height: 10%;
+    width: 100%;
+    border: 3px solid transparent;
+    border-radius: 0.4rem;
+    outline: 3px solid rgb(59, 123, 242);
+    background-color: whitesmoke;
+    /* outline: none; */
+    margin-bottom: 1rem;
+    color: cornflowerblue;
+    font-size: 1.25rem;
+    font-family: 'Trebuchet MS';
+    padding: 0.5rem;
+}
+
+.cont>button{
+    height: 10%;
+    width: 100%;
+    /* border: 2px solid yellow; */
+    border-radius: 0.4rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-family: 'Trebuchet MS';
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    border: none;
+}
+
+.cont>button:hover{
+    background-color: rgb(59, 123, 242);
+}
+
+.cont>button:active{
+    background-color: cornflowerblue;
+    border: 2px solid whitesmoke;
+}
+
+span{
+    margin-left: 0.5rem;
+    color: cornflowerblue;
+}
