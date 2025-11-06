@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // ***** better than inline onclick, but still not the best ******
+    // document.getElementById("owl").onclick = function(){
+    //     alert("Owl Clicked");
+    // }
+
+
+    // another-approach (early time....)
+    // atttachEvent()
+    // jQuery - on
+
+
+    // ****** BEST-APPROACH *******
+    // document.getElementById("owl").addEventListener("click",function(e){
+    //     // alert("Owl Clicked");
+    //     console.log(e);
+    // }, false);
+    // types, timestamp, defaultPrevented 
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screeX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    
+
+    // ****** EVENT-PROPAGATION (INTERESTING.....) ********
+
+    // ** inside to outside propagation (BUBBLING MODE) **
+    // document.getElementById("images").addEventListener("click",function(e){
+    //     console.log("Clicked inside the ul");
+    // }); // we can set false
+
+    // document.getElementById("owl").addEventListener("click",function(e){
+    //     console.log("owl clicked");
+    // }); // we can set false
+
+
+    // ** outside to inside propagation (CAPTURING MODE) **
+    // document.getElementById("images").addEventListener("click",function(e){
+    //     console.log("Clicked inside the ul");
+    // }, true);
+
+    // document.getElementById("owl").addEventListener("click",function(e){
+    //     console.log("owl clicked");
+    // }, true);
+
+
+    // ******* PREVENTING-PROPAGATION ********
+    // document.getElementById("images").addEventListener("click",function(e){
+    //     console.log("Clicked inside the ul");
+    // }, false);
+
+    // document.getElementById("owl").addEventListener("click",function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation(); // stops propagation
+    // }, false);
+
+
+    // ****** PREVENT-DEFAULT ****** 
+    // document.getElementById("google").addEventListener("click",(e) => {
+    //     e.preventDefault(); // prevent default behaviour
+    //     e.stopPropagation(); // also prevent propagation
+    //     console.log("Default prevented");
+    // }, false);
+
+
+    document.querySelector("#images").addEventListener("click",(e) => {
+        console.log(e.target.parentNode); // gives parent of e
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove(); // works clearly // removes element
+        // removeIt.parentNode.removeChild(removeIt); // works same
+
+        console.log(e.target.tagName);
+        // going one step further
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove(); // works clearly // removes element
+        }
+    }, false);
+
+</script>
+</html>
