@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    // ****** SET-TIMEOUT ******
+    const sayPrabh = function(){
+        console.log("Prabhjot Singh");
+    };
+    setTimeout(sayPrabh, 2000);
+
+    const changeText = () => {
+        document.querySelector("h1").innerHTML = "Best JS Series";
+    }
+    const changeMe = setTimeout(changeText, 2000);
+
+    // ****** CLEAR-TIMEOUT *******
+    document.querySelector("#stop").addEventListener("click",() =>{
+        console.log("STOPPED.......");
+        clearTimeout(changeMe);
+    })
+</script>
+</html>
