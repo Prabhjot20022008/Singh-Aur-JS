@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Project 1</title>
+</head>
+<body>
+    <h1>Async Project 1</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    const stopBtn = document.querySelector("#stop");
+    const startBtn = document.querySelector("#start");
+
+    const chants = () => {
+        console.log("Jaya Hai",Date.now());
+    }
+
+    let interval;
+    startBtn.addEventListener("click",() => {
+        interval = setInterval(chants,2000);
+    });
+
+    stopBtn.addEventListener("click",() =>{
+        console.log("Jaya Jaya Jaya Jaya Haiiiiii")
+        clearInterval(interval);
+    })
+</script>
